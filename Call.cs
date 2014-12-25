@@ -16,7 +16,11 @@ using System;
         //Properties
         public DateTime CallDateAndTime { get; set; }
         public int DialedNumber { get; set; }
-        public int Duration { get ; set; }
+        public int Duration 
+        {
+            get { return this.duration; } 
+            set { this.duration = value; } 
+        }
 
         //Constructor
         public Call(DateTime datetime,int dailednumber,int duration)

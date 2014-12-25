@@ -72,44 +72,8 @@ using System.Collections.Generic;
     {
         public static void Main()
         {
-
-            GSM Telefonche = new GSM("Iphone 4S", "Apple", "naskopicha", 1000, null, 10, 8, BatteryType.LiIon, 0, 1000000);
-            DateTime currentDateAndTime = DateTime.Now;
-            DateTime currentDateAndTime2 = new DateTime(2014, 12, 15, 15, 20, 34);
-            DateTime currentDateAndTime3 = new DateTime(2014, 12, 12, 15, 10, 23);
-            Telefonche.AddCall(currentDateAndTime, 0897861603, 120);
-            Telefonche.AddCall(currentDateAndTime2, 0899135151, 40);
-            Telefonche.AddCall(currentDateAndTime3, 0899135353, 400);
-
-
-            for (int i = 0; i < Telefonche.CallHistory.Count; i++)
-            {
-                Telefonche.CallHistory[i].PrintCallInfo();
-            }
-
-            Console.WriteLine(Telefonche.CalculateCallPrice(0.37m));
-
-            
-            
-           // "The servise costs {0} for a 0.37 price pre minute.",
-            
-            
-            
-            //    GSM iPhone4s = new GSM("Iphone 4S","Apple","naskopicha",1000,null,10,8,BatteryType.LiIon,0,1000000);
-
-
-        //    iPhone4s.PrintGSMInformation();
-
-            //GSM Telefonche = new GSM("Iphone 4S", "Apple", "naskopicha", 1000, null, 10, 8, BatteryType.LiIon, 0, 1000000);
-            //DateTime currentDate = DateTime.Today;
-            //DateTime currentTime = new DateTime(0, 0, 0, 18, 53, 0);
-            //Telefonche.AddCall(currentDate, currentTime, 0897861603, 120);
-            //for (int i = 0; i < Telefonche.CallHistory.Count; i++)
-            //{
-            //    Console.WriteLine(Telefonche.CallHistory[i]);
-            //}
-            //Console.ReadLine();
-            
+            GSMTest.Main();
+            GSMCallHistoryTest.Main();          
         }
     }
 

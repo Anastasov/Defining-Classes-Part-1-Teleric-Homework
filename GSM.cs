@@ -90,7 +90,14 @@ using System.Collections.Generic;
 
 
         //Iphone 4S properties | static
-        public static bool Iphone4S { get; set; }
+        public static bool IPhone4s
+        {
+            get { return iPhone4S; }
+            set
+            {
+                iPhone4S = value;
+            }
+        }
 
 
         #region Constructors
@@ -157,13 +164,15 @@ using System.Collections.Generic;
         //Delete Call | Method
         public void DeleteCall(string dialedNumber)
         {
+            int callIndex = 0;
             for (int i = 0; i < CallHistory.Count; i++)
             {
-                if (CallHistory[i].DialedNumber.Equals(dialedNumber))
+                if (CallHistory[i].DialedNumber.ToString() == dialedNumber)
                 {
-                    CallHistory.RemoveAt(i);
+                    callIndex = i;
                 }
             }
+            CallHistory.RemoveAt(callIndex);
         }
 
         //Clear History | Method
