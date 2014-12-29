@@ -23,16 +23,14 @@ using System.Collections.Generic;
 
             for (int i = 0; i < GSMList.Count; i++)
             {
-                GSMList[i].PrintGSMInformation();
-                Console.WriteLine("=============");
-
+                Console.WriteLine(GSMList[i].ToString());
             }        
             //Display the information about the static property IPhone4S.
             GSM.IPhone4s = true;
             foreach (var mobile in GSMList)
             {
-                GSM.IPhone4s = true;
-                Console.WriteLine("{0} : is iPhone4s: {1}\n", mobile, GSM.IPhone4s);
+
+                if (mobile.Model == "Iphone4S") { Console.WriteLine("{0} : is iPhone4s: {1}\n", mobile.Model, GSM.IPhone4s); }
             }
         }
     }

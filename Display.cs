@@ -2,7 +2,7 @@
 //(size and number of colors).
 
 using System;
-
+using System.Text;
 
     public class Display
     {
@@ -27,10 +27,12 @@ using System;
         public int NumberOfColors { get; set; }
 
         //Print Info for Display
-        public void PrintDisplayInfo()
+        public override string ToString()
         {
-            if (this.size != 0) { Console.WriteLine("Size of the display : {0}", this.size); }
-            if (this.numberOfColors != 0) { Console.WriteLine("Number of colors of the display : {0}", this.numberOfColors); }
+            StringBuilder information = new StringBuilder();
+            if (this.size != 0) { information.Append("\nSize of the display : " + this.size); }
+            if (this.numberOfColors != 0) { information.Append("\nNumber of colors of the display : " + this.numberOfColors); }
+            return information.ToString();
         }
     }
 

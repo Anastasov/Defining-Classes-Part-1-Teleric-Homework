@@ -141,16 +141,18 @@ using System.Collections.Generic;
         #endregion
 
 
-        //Display Information about the GSM | Method
-        public void PrintGSMInformation()
+        //Display Information about the GSM (Override ToString())| Method
+        public override string ToString()
         {
-            
-            if (this.model != null)  { Console.WriteLine("Model : {0}", this.model);}
-            if (this.manufacturer != null) { Console.WriteLine("Manufacturer : {0}",this.manufacturer); }
-            if (this.owner != null) { Console.WriteLine("Owner : {0}",this.owner); }
-            if (this.price != 0) { Console.WriteLine("Price : {0}",this.price); }
-            this.battery.PrintBatteryInfo();
-            this.display.PrintDisplayInfo();
+            StringBuilder information = new StringBuilder();
+            if (this.model != null) { information.Append("Model : " + this.model); }
+            if (this.manufacturer != null) { information.Append("\n" + "Manufacturer : " + this.manufacturer); }
+            if (this.owner != null) { information.Append("\n" + "Owner : " + this.owner); }
+            if (this.price != 0) { information.Append("\n"+"Price : " + this.price); }
+            information.Append(this.battery.ToString());
+            information.Append(this.display.ToString());
+            information.Append("\n=============\n");
+            return information.ToString();
         }
 
         //Call History

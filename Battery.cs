@@ -3,6 +3,7 @@
 
 
 using System;
+using System.Text;
 
 
 
@@ -57,11 +58,13 @@ public enum BatteryType
         public BatteryType Type { get; set; }
 
         //Print Info of Battery | Method
-        public void PrintBatteryInfo()
+        public override string ToString()
         {
-            if (this.model != null) { Console.WriteLine("Battery Model : {0}", this.model); }
-            if (this.type != null) { Console.WriteLine("Battery Type : {0}", this.type); }
-            if (this.hoursIdle != 0) { Console.WriteLine("Battery survival without talking : {0}", this.hoursIdle); }
-            if (this.hoursTalk != 0) { Console.WriteLine("Battery survival when talking : {0}", this.hoursTalk); }
+            StringBuilder information = new StringBuilder();
+            if (this.model != null) { information.Append("\nBattery Model : " + this.model); }
+            if (this.type != null) { information.Append("\nattery Type : " + this.type); }
+            if (this.hoursIdle != 0) { information.Append("\nBattery survival without talking : " + this.hoursIdle); }
+            if (this.hoursTalk != 0) { information.Append("\nBattery survival when talking : " + this.hoursTalk); }
+            return information.ToString();
         }
     }
